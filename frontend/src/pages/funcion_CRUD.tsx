@@ -83,7 +83,7 @@ export default function FuncionCrudPage() {
 
     const deleteFunciones = async (id:number) => {
         try {
-            await axios.put<TRes>(`${process.env.NEXT_PUBLIC_API_REST_URL}/update/${id}`,); 
+            await axios.delete<TRes>(`${process.env.NEXT_PUBLIC_API_REST_URL}/delete/${id}`,); 
             getFunciones();
         } catch (error) {
             alert(`Ocurrio un error durante la petición: ${error}`)
@@ -102,7 +102,6 @@ export default function FuncionCrudPage() {
                 <input
                     type= "text"
                     onChange={(e)=>onChange(e)}
-                    defaultValue= {funcion.name}
                     name= "name"
                     placeholder='Nombre'
                 /><br />
@@ -110,7 +109,6 @@ export default function FuncionCrudPage() {
                 <input
                     type= "text"
                     onChange={(e)=>onChange(e)}
-                    defaultValue= {funcion.duration}
                     name= "duration"
                     placeholder='Duracion'
                 /><br />
@@ -118,7 +116,6 @@ export default function FuncionCrudPage() {
                 <input
                     type= "text"
                     onChange={(e)=>onChange(e)}
-                    defaultValue= {funcion.genere_movie}
                     name= "genere_movie"
                     placeholder='Genero'
                 /><br />
@@ -126,7 +123,6 @@ export default function FuncionCrudPage() {
                 <input
                     type= "text"
                     onChange={(e)=>onChange(e)}
-                    defaultValue= {funcion.time_start}
                     name= "time_start"
                     placeholder='Inicio'
                 /><br />
@@ -134,7 +130,6 @@ export default function FuncionCrudPage() {
                 <input
                     type= "text"
                     onChange={(e)=>onChange(e)}
-                    defaultValue= {funcion.time_finish}
                     name= "time_finish"
                     placeholder='Fin'
                 /><br />
